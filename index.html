@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>Train Scheduler</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Choo Choo Choose Your Train</h1>
+    </header>
+    <table id="table-data">
+      <tr>
+        <th>Train Name</th>
+        <th>Destination</th>
+        <th>Frequency (min)</th>
+        <th>Next Arrival</th>
+        <th>Minutes Away</th>
+      </tr>
+    </table>
+    <div id="section-container">
+      <form>
+        Train Name<br>
+        <input type="text" id="train-name" value="" placeholder="Train Name"><br>
+        Destination<br>
+        <input type="text"  id="destination" value="Destination"><br>
+        First Train Time (hhmm)<br>
+        <input type="time" id="first-train-time" value="First Train Time"><br>
+        Frequency (min)<br>
+        <input type="number" id="frequency" value="Frequency"><br>
+      </form>
+      <button id="button-submit">Submit</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="assets/scripts.js" async defer></script>
+  <footer>Steal footer from previous projects, see GIPHY project</footer>
+  </body>
+</html>
