@@ -35,26 +35,27 @@ $("#button-submit").on('click', function(){
 
 database.ref().on('child_added', function(snapshot){
   var data = snapshot.val()
-  var nowMoment = moment("X");
-  console.log("Now moment: ", nowMoment)
-  var dateAddedMoment = moment(data.dateAdded)
-  console.log("Date added moment: ", dateAddedMoment)
-  var difference = nowMoment.diff(dateAddedMoment)
-  console.log("difference: " + difference)
-  console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-  var firstTrainTimeMoment = moment(data.firstTrainTime, "X")
-  console.log("Now moment: ", nowMoment)
-  console.log("First Train Time moment", firstTrainTimeMoment)
-  var secondsFromFirstTrain = nowMoment.diff(firstTrainTimeMoment)
-  console.log(secondsFromFirstTrain)
+  var firstTrainTime = data.firstTrainTime
+  var firstTrainTimeMoment = moment(firstTrainTime, "HH:mm")
   var minutesAway = 12 
+  var nextArrival = 12;
+  var nowMoment = moment()
+  var firstTrainTimeMoment = moment(data.firstTrainTime, "HH:mm")
+  var timeFromFirstTrain = nowMoment.diff(firstTrainTimeMoment)
+  var duration = moment.duration(nowMoment.diff(firstTrainTimeMoment))
+
+  console.log("Now moment: ", nowMoment.format("HH:mm"))
+  console.log("First Train Time", firstTrainTime)
+  console.log("First Train Time moment", firstTrainTimeMoment.format("HH:mm"))
+  console.log("Time from first Train: ", moment(timeFromFirstTrain).format("HH:mm"))
+  console.log("reversed", moment(firstTrainTimeMoment.diff(nowMoment)).format("HH:mm"))
+  console.log("stack overflow solution", moment(duration).format("HH:mm"))
+  
   // current time in minutes from FirstTrainTime(3AM = 180 minutes) - firstTrainMinutes using DIFF from EPOCH OK.
   // In example, this is 120 minutes.
   // difference % frequency = 0 = 0 minutes away.
   // time + difference % frequncy = Next Arrival time (converted to time)
-  // frequency = 12 minutes
-  // current time = nowMoment
-  var nextArrival = 12;
+  
   
   $("#table-data").append("<tr><td>" + data.trainName + "</td><td>" + data.destination + "</td><td>" + data.frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>")
 })
