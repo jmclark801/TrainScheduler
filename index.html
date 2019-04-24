@@ -7,34 +7,44 @@
   </head>
   <body>
     <header>
-      <h1>Choo Choo Choose Your Train</h1>
+      <h1>Train Scheduler</h1>
+      <h4>Scheduled trains will be stored in Firebase and arrival/minutes away are calculated using moment.js</h4>
     </header>
-    <table id="table-data">
-      <tr>
-        <th>Train Name</th>
-        <th>Destination</th>
-        <th>Frequency (min)</th>
-        <th>Next Arrival</th>
-        <th>Minutes Away</th>
-      </tr>
-    </table>
-    <div id="section-container">
+    <div id="table-container">
+      <div class="section-header">Current Train Schedule</div>
+      <table id="table-data">
+          <tr id="header">
+            <th>Train Name</th>
+            <th>Destination</th>
+            <th>Frequency (min)</th>
+            <th>Next Arrival</th>
+            <th>Minutes Away</th>
+          </tr>
+        </table>
+    </div>
+    <div id="form-container">
+      <div class="section-header">Add a New Train</div>
       <form>
-        Train Name<br>
-        <input type="text" id="train-name" value="" placeholder="Train Name"><br>
-        Destination<br>
-        <input type="text"  id="destination" value="Destination"><br>
-        First Train Time (hhmm)<br>
-        <input type="time" id="first-train-time" value="First Train Time"><br>
-        Frequency (min)<br>
-        <input type="number" id="frequency" value="Frequency"><br>
+        <p>Train Name</p>
+        <input type="text" id="train-name" class="form-input" value="" placeholder="Enter a Train Name">
+        <p>Destination</p>
+        <input type="text"  id="destination" class="form-input" value="" placeholder="Enter a destination">
+        <p>First Train Time (hhmm)</p>
+        <input type="time" id="first-train-time" class="form-input" value="">
+        <p>Frequency (min)</p>
+        <input type="number" id="frequency" class="form-input" value="" placeholder="Enter a frequency">
       </form>
       <button id="button-submit">Submit</button>
     </div>
+    <footer class="container">
+        <div class="center-text">
+            <img class="footer-image" src="assets/images/logo_transparent.png"> 
+        </div>
+          <p class="center-text">© Jim Clark 2019 | All Rights Reserved</p>
+    </footer>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
     <script src="assets/scripts.js" async defer></script>
-  <footer>Steal footer from previous projects, see GIPHY project</footer>
   </body>
 </html>

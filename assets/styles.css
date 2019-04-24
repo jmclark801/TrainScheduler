@@ -1,3 +1,121 @@
-table, th, tr, td {
-  border: 1px solid black;
+@font-face {
+  font-family: ticketing;
+  src: url(fonts/Ticketing.ttf);
 }
+
+body {
+  background-image: url(images/dark-honeycomb.png);
+  color: #3FAAA5;
+  font-family: ticketing, "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+}
+
+#button-submit {
+    background: linear-gradient(103deg, rgb(63, 170, 165), rgb(82, 139, 207), rgb(63, 170, 165));
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    height: 50px;
+    margin: 0px 5px 0px 0px;  
+    width: 120px;
+}
+
+.center-image {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text {
+  font-size: 18px;
+  text-align: center;
+}
+
+footer {
+  border-top: 5px solid #3FAAA5;
+}
+
+.footer-image {
+  height: 100px;
+  width: 100px;
+}
+
+header {
+  background-color: white;
+  border-radius: 5px;
+  color: #3FAAA5;
+  font-family: ticketing, "Times New Roman", Times, serif;
+  font-size: 40px;
+  margin: 25px;
+  padding: 5px;
+  text-align: center;
+}
+
+h4 {
+  color: #666;
+  font-size: 18px;
+}
+
+#form-container, #table-container {
+  background-color: white;
+  border-radius: 5px;
+  margin: 25px;
+  padding: 10px;
+}
+
+.form-input {
+  background: #eee;
+  border: none;
+  color: #777;
+  font-size: 18px;
+  height: 50px;
+  margin: 0px 0px 20px 0px;
+  padding: 0px 15px;
+  width: 70vw;
+}
+
+#header {
+  border-bottom: 3px solid #3FAAA5;
+}
+
+input::placeholder {
+  color: #999;
+  opacity: .5; 
+}
+
+p {
+  font-size: 20px;
+  padding-left: 15px;
+  margin: 5px 0px;
+}
+
+.section-header{
+  background-color: #1E5375;
+  border-radius: 5px;
+  color: white;
+  font-size: 22px;
+  padding: 5px 0px 5px 5px;
+}
+
+table {
+  table-layout: fixed;
+  width: 1000px; 
+}
+
+th, td {
+  font-size: 20px;
+  padding: 15px;
+}
+
+tr:nth-child(odd+1) {
+  background: blanchedalmond;
+}
+
+tr:nth-child(even){
+  background: lightgray;
+}
+
+tr:last-child {
+  border-bottom: 10px solid #777
+}
+
